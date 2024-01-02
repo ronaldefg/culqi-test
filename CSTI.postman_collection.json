@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "30e37a6c-d11b-495c-aea3-f1ad3e375635",
+		"name": "CSTI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4668997"
+	},
+	"item": [
+		{
+			"name": "Create Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"ronaldefg@gmail.com\",\r\n  \"card_number\": \"4111111111111111\",\r\n  \"cvv\": \"123\",\r\n  \"expiration_month\": \"12\",\r\n  \"expiration_year\": \"2024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/create-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Card Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvbmFsZGVmZ0BnbWFpbC5jb20iLCJjYXJkX251bWJlciI6IjQxMTExMTExMTExMTExMTEiLCJjdnYiOiIxMjMiLCJleHBpcmF0aW9uX21vbnRoIjoiMTIiLCJleHBpcmF0aW9uX3llYXIiOiIyMDI0IiwiaWF0IjoxNzA0MTk4NjkzLCJleHAiOjE3MDQxOTg3NTN9.UAm0FHhqW_cBCboXs6_cHf4HL_m2FMFovtHo5znTsvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"card_number\": \"4111111111111111\",\r\n  \"cvv\": \"123\",\r\n  \"expiration_month\": \"12\",\r\n  \"expiration_year\": \"2023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/get-card-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"get-card-data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
